@@ -1,1 +1,40 @@
 @import url(reset.css);
+
+:root {
+  /* PRIMARY */
+  --text-primary: hsl(238, 29%, 16%);
+  --text-primary-hover: hsl(14, 88%, 65%);
+  --gradient-1: hsl(273, 75%, 66%);
+  --gradient-2: hsl(240, 73%, 65%);
+  --linear-gradient: linear-gradient(
+    to bottom,
+    var(--gradient-1),
+    var(--gradient-2)
+  );
+  /* NEUTRAL */
+  --text-neutral: hsl(237, 12%, 33%);
+  --text-neutral-2: hsl(240, 6%, 50%);
+  --divider: hsl(240, 5%, 91%);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  min-height: 100vh;
+  font-size: 75%;
+  background: var(--linear-gradient);
+  background-repeat: no-repeat;
+  padding: 2em;
+}
+
+main {
+  position: relative;
+  background: white;
+  display: flex;
+  gap: 5em;
+  flex-direction: column;
+  align-items: center;
+}
