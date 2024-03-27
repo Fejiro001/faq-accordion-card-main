@@ -40,7 +40,7 @@ body {
   font-size: 75%;
   background: var(--linear-gradient);
   background-repeat: no-repeat;
-  padding: 2em;
+  padding: 5em 2em;
   font-family: "Kumbh Sans";
 }
 
@@ -55,35 +55,32 @@ main {
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
-  min-height: 44.5em;
+  min-height: 42.5em;
   background-image: url(../assets/images/bg-pattern-mobile.svg);
   background-repeat: no-repeat;
   background-position: top center;
 }
 
 .illustrated-image-container {
-    position: absolute;
-    height: fit-content;
-    top: -110px;
+  position: absolute;
+  height: fit-content;
+  top: -110px;
 }
 
 section {
-  padding: 3.6em 1.5em 1em;
+  padding: 3.6em 1.5em;
   display: grid;
   gap: 1em;
   height: fit-content;
-  place-self: end;
+  /* place-self: end; */
   margin-top: 7em;
 }
 
 section h1 {
   text-align: center;
   font-weight: 700;
-  font-size: 2.6em;
+  font-size: clamp(2.6em, 1vw, 3.2em);
 }
-
-/* .accordion-container {
-} */
 
 .accordion {
   border-bottom: solid 1px var(--divider);
@@ -93,7 +90,7 @@ section h1 {
 }
 
 .accordion h2 {
-  font-size: 1.1em;
+  font-size: clamp(1.1em, 1vw, 2.5em);
   font-weight: 400;
   color: var(--text-neutral);
   text-align: start;
@@ -121,15 +118,15 @@ section h1 {
 }
 
 .accordion-panel p {
-  font-size: 1em;
+  font-size: clamp(1em, 0.5vw, 2em);
   color: var(--text-neutral-2);
 }
 
 .attribution {
   text-align: center;
-  /* color: white; */
+  color: white;
   font-weight: 700;
-  font-size: 1.1em;
+  font-size: clamp(1.1em, 0.5vw, 2em);
 }
 
 a {
@@ -139,4 +136,46 @@ a {
 
 a:focus {
   outline: var(--text-primary-hover) dashed 2px;
+}
+
+@media (min-width: 900px) {
+  .main-container {
+    margin: 0;
+  }
+  main {
+    flex-direction: row;
+    background-image: url(../assets/images/bg-pattern-desktop.svg);
+    background-position: -45em -22em;
+    background-size: 100%;
+    max-width: 76.8em;
+    overflow: clip;
+    z-index: -1;
+    position: relative;
+  }
+  .illustrated-image-container {
+    position: relative;
+    top: 0;
+    left: -55px;
+    width: 50em;
+  }
+  .illustrated-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .illustrated-image-container::after {
+    content: url(../assets/images/illustration-box-desktop.svg);
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    z-index: 10;
+  }
+  section {
+    padding-inline: 2.2em 9em;
+    margin-top: 0;
+    gap: 1.5em;
+  }
+  section h1 {
+    text-align: start;
+  }
 }
