@@ -8,7 +8,7 @@
   --gradient-2: hsl(240, 73%, 65%);
   --linear-gradient: linear-gradient(
     to bottom,
-    var(--gradient-1),
+    var(--gradient-1) 20%,
     var(--gradient-2)
   );
   /* NEUTRAL */
@@ -42,34 +42,38 @@ body {
   background-repeat: no-repeat;
   padding: 2em;
   font-family: "Kumbh Sans";
-  position: relative;
+}
+
+.main-container {
+  margin-block-start: 5em;
 }
 
 main {
+  position: relative;
   background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2em;
-  /* align-content: space-between; */
-  /* justify-content: end; */
   border-radius: 20px;
-  min-height: 50em;
+  min-height: 44.5em;
+  background-image: url(../assets/images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .illustrated-image-container {
-    position: relative;
-    top: -100px;
+    position: absolute;
     height: fit-content;
-    top: -25%;
+    top: -110px;
 }
 
 section {
-  padding: 3.6em 1.5em;
+  padding: 3.6em 1.5em 1em;
   display: grid;
   gap: 1em;
   height: fit-content;
   place-self: end;
+  margin-top: 7em;
 }
 
 section h1 {
@@ -78,8 +82,8 @@ section h1 {
   font-size: 2.6em;
 }
 
-.accordion-container {
-}
+/* .accordion-container {
+} */
 
 .accordion {
   border-bottom: solid 1px var(--divider);
@@ -123,7 +127,7 @@ section h1 {
 
 .attribution {
   text-align: center;
-  color: white;
+  /* color: white; */
   font-weight: 700;
   font-size: 1.1em;
 }
