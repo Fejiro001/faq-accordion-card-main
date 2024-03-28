@@ -81,6 +81,10 @@ section h1 {
   font-size: clamp(2.6em, 1vw, 3.2em);
 }
 
+.hidden {
+  display: none;
+}
+
 .accordion {
   border-bottom: solid 1px var(--divider);
   padding-block: 1.2em;
@@ -94,6 +98,16 @@ section h1 {
   color: var(--text-neutral);
 }
 
+.accordion-button:focus {
+  font-weight: 700;
+}
+.accordion-button:focus + .hidden {
+  display: block;
+}
+.accordion-button:hover:not(:focus) {
+  color: var(--text-primary-hover);
+}
+
 .accordion .accordion-button {
   text-align: start;
   width: 100%;
@@ -101,11 +115,12 @@ section h1 {
   border: none;
   display: flex;
   align-items: center;
+  gap: 1em;
   justify-content: space-between;
   cursor: pointer;
 }
 
-.accordion-button:focus {
+.accordion-button:focus-visible {
   outline: var(--text-primary-hover) dashed 2px;
 }
 
@@ -172,6 +187,7 @@ a:focus {
     padding-inline: 2.2em 9em;
     margin-top: 0;
     gap: 1.5em;
+    min-width: 40em;
   }
   section h1 {
     text-align: start;
