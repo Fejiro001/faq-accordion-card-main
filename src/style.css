@@ -72,7 +72,6 @@ section {
   display: grid;
   gap: 1em;
   height: fit-content;
-  /* place-self: end; */
   margin-top: 7em;
 }
 
@@ -93,16 +92,17 @@ section h1 {
   font-size: clamp(1.1em, 1vw, 2.5em);
   font-weight: 400;
   color: var(--text-neutral);
-  text-align: start;
 }
 
 .accordion .accordion-button {
+  text-align: start;
   width: 100%;
   background: none;
   border: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .accordion-button:focus {
@@ -135,7 +135,7 @@ a {
 }
 
 a:focus {
-  outline: var(--text-primary-hover) dashed 2px;
+  outline: white dashed 2px;
 }
 
 @media (min-width: 900px) {
@@ -148,27 +148,25 @@ a:focus {
     background-position: -45em -22em;
     background-size: 100%;
     max-width: 76.8em;
-    overflow: clip;
-    z-index: -1;
     position: relative;
   }
   .illustrated-image-container {
     position: relative;
     top: 0;
-    left: -55px;
+    overflow: clip;
     width: 50em;
   }
   .illustrated-image {
     position: relative;
+    left: -55px;
     width: 100%;
     height: auto;
   }
-  .illustrated-image-container::after {
+  main::after {
     content: url(../assets/images/illustration-box-desktop.svg);
     position: absolute;
-    bottom: 0;
-    left: -20px;
-    z-index: 10;
+    bottom: 110px;
+    left: -80px;
   }
   section {
     padding-inline: 2.2em 9em;
