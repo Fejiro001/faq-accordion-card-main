@@ -43,12 +43,10 @@ body {
   padding: 5em 2em;
   font-family: "Kumbh Sans", sans-serif;
 }
-
 .main-container {
   margin-block-start: 5em;
   width: 100%;
 }
-
 main {
   position: relative;
   background: white;
@@ -62,6 +60,7 @@ main {
   background-position: top center;
 }
 
+/* ILLUSTRATED IMAGE */
 .illustrated-image-container {
   position: absolute;
   height: fit-content;
@@ -76,24 +75,22 @@ section {
   margin-top: 7em;
   width: 100%;
 }
-
 section h1 {
   text-align: center;
   font-weight: 700;
   font-size: clamp(2.6em, 1vw, 3.2em);
 }
 
+/* ACCORDION */
 .hidden {
   display: none;
   opacity: 0;
 }
-
 .accordion h2:has(> .accordion-button:focus) + .hidden {
   display: block;
   opacity: 1;
-  animation: slideout 500ms ease-out ;
+  animation: slideout 500ms ease-out;
 }
-
 @keyframes slideout {
   from {
     opacity: 0;
@@ -102,28 +99,23 @@ section h1 {
     opacity: 1;
   }
 }
-
 .accordion {
   border-bottom: solid 1px var(--divider);
   padding-block: 1.2em;
   display: grid;
   gap: 0.8em;
 }
-
 .accordion h2 {
   font-size: clamp(1.1em, 1vw, 2.5em);
   font-weight: 400;
   color: var(--text-neutral);
 }
-
 .accordion-button:focus {
   font-weight: 700;
 }
-
 .accordion-button:hover:not(:focus) {
   color: var(--text-primary-hover);
 }
-
 .accordion .accordion-button {
   text-align: start;
   width: 100%;
@@ -135,15 +127,12 @@ section h1 {
   justify-content: space-between;
   cursor: pointer;
 }
-
 .accordion-button:focus-visible {
   outline: var(--text-primary-hover) dashed 2px;
 }
-
 .accordion-button img {
   display: inline;
 }
-
 .accordion-button:focus > img {
   -webkit-transform: scaleY(-1);
   -moz-transform: scaleY(-1);
@@ -151,33 +140,29 @@ section h1 {
   transform: scaleY(-1);
   transition: transform 200ms ease-in;
 }
-
 .accordion .accordion-panel {
   padding-inline: 0.5em 2em;
 }
-
 .accordion-panel p {
   font-size: clamp(1em, 0.5vw, 2em);
   color: var(--text-neutral-2);
 }
-
+/* FOOTER */
 .attribution {
   text-align: center;
   color: white;
   font-weight: 700;
   font-size: clamp(1.1em, 0.5vw, 2em);
 }
-
 a {
   text-decoration: none;
   color: black;
   background-color: white;
 }
-
 a:focus {
   outline: white dashed 2px;
 }
-
+/* BIGGER DEVICES */
 @media (min-width: 950px) {
   .main-container {
     margin: 0;
